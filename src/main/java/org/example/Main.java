@@ -1,14 +1,12 @@
 package org.example;
 public class Main {
     static void main() {
-        boolean A = true;
-        boolean B = false;
-        boolean cond1, cond2, cond3;
-        cond1 = A && B;
-        cond2 = A || B;
-        cond3 = !A;
-        System.out.println("A e B: " + cond1);
-        System.out.println("A ou B: " + cond2);
-        System.out.println("Inverso de A: " + cond3);
+        double p1, p2, p3;
+        p1 = 75;
+        p2 = 10.7;
+        p3 = 100;
+        double media = (p1+p2+p3)/3;
+        System.out.println("Suas notas foram: " + p1 + ", " + p2 + " e " + p3);
+        System.out.println("A media desse semestre e de: " + media);
     }
 }
