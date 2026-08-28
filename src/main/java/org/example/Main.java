@@ -1,12 +1,13 @@
 package org.example;
+import java.util.Scanner;
 public class Main {
     static void main() {
-        double p1, p2, p3;
-        p1 = 75;
-        p2 = 10.7;
-        p3 = 100;
-        double media = (p1+p2+p3)/3;
-        System.out.println("Suas notas foram: " + p1 + ", " + p2 + " e " + p3);
-        System.out.println("A media desse semestre e de: " + media);
+        Scanner entrada = new Scanner(System.in);
+        double celsius;
+        System.out.println("Informe a temperatura em graus celsius: ");
+        celsius = entrada.nextDouble();
+        double fahrenheint = (celsius * 9/5) + 32;
+        System.out.println("A sua temperatura em graus celsius e: " + celsius);
+        System.out.println("A sua temperatura em fahrenheits e: " + fahrenheint);
     }
 }
