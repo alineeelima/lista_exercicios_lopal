@@ -1,12 +1,11 @@
 package org.example;
 public class Main {
     static void main() {
-        float valorFloat = 2.7f;
-        long valorLong = (long) valorFloat;
-        double valorDouble = valorLong;
-        int valorInt = (int) valorDouble;
-        System.out.println("Valor do float: " + valorFloat);
-        System.out.println("Valor do long: " + valorLong);
-        System.out.println("Valor do double: " + valorDouble);
+        short valorShort = 3;
+        int valorInt = valorShort;
+        byte valorByte = (byte)valorShort;
+        System.out.println("Valor do short: " + valorShort);
+        System.out.println("Valor do int: " + valorInt);
+        System.out.println("Valor do byte: " + valorByte);
     }
 }
