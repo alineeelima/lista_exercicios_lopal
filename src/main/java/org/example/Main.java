@@ -1,11 +1,13 @@
 package org.example;
 public class Main {
     static void main() {
-        short valorShort = 3;
-        int valorInt = valorShort;
-        byte valorByte = (byte)valorShort;
-        System.out.println("Valor do short: " + valorShort);
-        System.out.println("Valor do int: " + valorInt);
-        System.out.println("Valor do byte: " + valorByte);
+        int valor1 = 78;
+        int valor2 = 96;
+        System.out.println("valor1 e maior do que o valor2?: " + (valor1 > valor2));
+        System.out.println("valor1 e menor do que o valor2?: " + (valor1 < valor2));
+        System.out.println("valor1 e maior ou igual ao valor2?: " + (valor1 >= valor2));
+        System.out.println("valor1 e menor ou igual ao valor2?: " + (valor1 <= valor2));
+        System.out.println("valor1 e igual ao valor2?: " + (valor1 == valor2));
+        System.out.println("valor1 e diferente do valor2?: " + (valor1 != valor2));
     }
 }
