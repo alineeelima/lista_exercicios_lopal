@@ -1,13 +1,14 @@
 package org.example;
 public class Main {
     static void main() {
-        int valor1 = 78;
-        int valor2 = 96;
-        System.out.println("valor1 e maior do que o valor2?: " + (valor1 > valor2));
-        System.out.println("valor1 e menor do que o valor2?: " + (valor1 < valor2));
-        System.out.println("valor1 e maior ou igual ao valor2?: " + (valor1 >= valor2));
-        System.out.println("valor1 e menor ou igual ao valor2?: " + (valor1 <= valor2));
-        System.out.println("valor1 e igual ao valor2?: " + (valor1 == valor2));
-        System.out.println("valor1 e diferente do valor2?: " + (valor1 != valor2));
+        boolean A = true;
+        boolean B = false;
+        boolean cond1, cond2, cond3;
+        cond1 = A && B;
+        cond2 = A || B;
+        cond3 = !A;
+        System.out.println("A e B: " + cond1);
+        System.out.println("A ou B: " + cond2);
+        System.out.println("Inverso de A: " + cond3);
     }
 }
