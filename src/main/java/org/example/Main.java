@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class Main {
     static void main() {
         Scanner entrada = new Scanner(System.in);
-        double reais;
-        System.out.println("Informe a quantia que você possui em reais: ");
-        reais = entrada.nextDouble();
-        double cotacao;
-        System.out.println("Informe a cotação atual do dólar: ");
-        cotacao = entrada.nextDouble();
-        double valorFinal = reais/cotacao;
-        System.out.println("A sua quantia em reais equivale a $" + valorFinal);
+        double distancia;
+        System.out.println("Informe a quantidade de quilômetros percorridos: ");
+        distancia = entrada.nextDouble();
+        double combustivel;
+        System.out.println("Informe a quantidade de combustível gasto: ");
+        combustivel = entrada.nextDouble();
+        double consumoMedio = distancia / combustivel;
+        System.out.println("O consumo médio do seu veículo é de (km/l): " + consumoMedio);
     }
 }
