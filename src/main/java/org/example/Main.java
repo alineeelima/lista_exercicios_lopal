@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class Main {
     static void main() {
         Scanner entrada = new Scanner(System.in);
-        double distancia;
-        System.out.println("Informe a quantidade de quilômetros percorridos: ");
-        distancia = entrada.nextDouble();
-        double combustivel;
-        System.out.println("Informe a quantidade de combustível gasto: ");
-        combustivel = entrada.nextDouble();
-        double consumoMedio = distancia / combustivel;
-        System.out.println("O consumo médio do seu veículo é de (km/l): " + consumoMedio);
+        double valorHora;
+        System.out.println("Informe o valor da sua hora de trabalho: ");
+        valorHora = entrada.nextDouble();
+        double horasTrabalhadas;
+        System.out.println("Informe a quantidade de horas trabalhadas: ");
+        horasTrabalhadas = entrada.nextDouble();
+        double salarioMensal = valorHora * horasTrabalhadas;
+        System.out.println("O seu salário desse mês será de: R$" + salarioMensal);
     }
 }
