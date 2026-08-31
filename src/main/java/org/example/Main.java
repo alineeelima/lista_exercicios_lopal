@@ -1,15 +1,12 @@
 package org.example;
+import java.lang.Math;
 import java.util.Scanner;
 public class Main {
     static void main() {
         Scanner entrada = new Scanner(System.in);
-        double valorHora;
-        System.out.println("Informe o valor da sua hora de trabalho: ");
-        valorHora = entrada.nextDouble();
-        double horasTrabalhadas;
-        System.out.println("Informe a quantidade de horas trabalhadas: ");
-        horasTrabalhadas = entrada.nextDouble();
-        double salarioMensal = valorHora * horasTrabalhadas;
-        System.out.println("O seu salário desse mês será de: R$" + salarioMensal);
+        double raio;
+        raio = entrada.nextDouble();
+        double area = Math.PI * raio*raio;
+        System.out.println("A área do seu círculo é de: " + area);
     }
 }
