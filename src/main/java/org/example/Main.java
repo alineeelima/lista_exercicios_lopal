@@ -5,12 +5,13 @@ import java.util.Scanner;
 public class Main {
     static void main() {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite uma medida em metros: ");
-        double metros = entrada.nextDouble();
-        double cm = metros * 100;
-        double mm = metros * 1000;
-        System.out.println("Medida em metros: "+ metros);
-        System.out.println("Medida em cm: "+ cm);
-        System.out.println("Medida em mm: "+ mm);
+        System.out.println("Digite o dividendo da operação: ");
+        int num1 = entrada.nextInt();
+        System.out.println("Digite o divisor da operação: ");
+        int num2 = entrada.nextInt();
+        int div = num1/num2;
+        int resto = num1%num2;
+        System.out.println("O resultado da sua operação é de: "+ div);
+        System.out.println("O resto da sua operação é de: "+ resto);
     }
 }
