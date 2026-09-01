@@ -7,10 +7,9 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Digite um tempo (em segundos): ");
         int segundos = entrada.nextInt();
-        int todosMinutos = segundos/60;
-        int horas = todosMinutos/60;
-        int minutos = todosMinutos%60;
-        int resto = segundos%60;
+        int horas = segundos/3600;
+        int minutos = (segundos%3600)/60;
+        int resto = (segundos%3600)%60;
         System.out.println("O seu tempo é igual a: "+ horas + " hora(s), " +minutos+ " minuto(s) e "+resto+" segundo(s)");
     }
 }
