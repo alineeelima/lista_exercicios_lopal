@@ -1,16 +1,16 @@
 package org.example;
-import java.sql.SQLOutput;
+
 import java.util.Scanner;
 
 public class Main {
     static void main() {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Qual é o salário mensal de um funcionário: ");
-        Double salario = entrada.nextDouble();
-        if (salario >= 4000){
-            System.out.println("Você não tem direito ao vale refeição!");
+        System.out.println("Digite o tempo de empresa de um funcionário (em meses): ");
+        int tempo_empresa = entrada.nextInt();
+        if (tempo_empresa >= 3){
+            System.out.println("O funcionário pode aderir ao plano de saúde!");
         }else{
-            System.out.println("Você tem direito ao vale refeiçãõ!");
+            System.out.println("O funcionário não pode aderir ao plano de saúde!");
         }
     }
 }
