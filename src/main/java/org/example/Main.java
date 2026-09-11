@@ -5,11 +5,14 @@ import java.util.Scanner;
 public class Main {
     static void main() {
         Scanner entrada = new Scanner(System.in);
-        double total = 0;
-        for(int venda=1;venda<=5;venda++){
-            System.out.println("Digite o valor da compra "+ venda + ": " );
-            total = total + entrada.nextDouble();
+        int avaliacao = 0;
+        int cliente;
+        for(cliente=0;cliente<10;){
+            cliente++;
+            System.out.println("Digite a nota do cliente "+ cliente + ": " );
+            avaliacao = entrada.nextInt();
+            System.out.println("Nota " +avaliacao+ " do cliente " +cliente+ ", registrada com sucesso.");
         }
-        System.out.println("O faturamento total é de: R$"+ total);
+        System.out.println("Foram registradas " + cliente + " avaliações");
     }
 }
