@@ -5,17 +5,16 @@ import java.util.Scanner;
 public class Main {
     static void main() {
         Scanner entrada = new Scanner(System.in);
-        System.out.print("Digite o valor investido pelo cliente: ");
-        double investimento = entrada.nextDouble();
+        System.out.print("Digite a renda do cliente: ");
+        double renda = entrada.nextDouble();
 
-        if (investimento > 100000) {
-            System.out.println("Sua categoria é platina.");
-        }else if(investimento > 50000 && investimento <= 100000){
-            System.out.println("Sua categoria é ouro.");
-        }else if(investimento > 10000 && investimento <= 50000){
-            System.out.println("Sua categoria é prata.");
+        System.out.print("Digite o score do cliente: ");
+        double score = entrada.nextDouble();
+
+        if (renda > 8000 && score > 700) {
+            System.out.println("Você pode solicitar o cartão premium.");
         }else{
-            System.out.println("Sua categoria é bronze.");
+            System.out.println("Você não pode solicitar o cartão preimum.");
         }
     }
 }
