@@ -4,16 +4,18 @@ import java.util.Scanner;
 public class Main {
     static void main() {
         Scanner entrada = new Scanner (System.in);
-        double[] temperaturas = new double[9];
-        int dias = 0;
-        for (int i = 0; i < 9; i++){
-            System.out.println("Informe a temperatura medida nesse dia: ");
-            temperaturas[i] = entrada.nextDouble();
-            if (temperaturas[i] > 30){
-                dias ++;
+        double[] setores = new double[12];
+        double maiorValor = 0;
+        int maior = 0;
+        for (int i = 0; i < 12; i++){
+            System.out.println("Informe a quantidade de água utilizada pelo setor "+i+": ");
+            setores[i] = entrada.nextDouble();
+            if (setores[i] > maiorValor){
+                maiorValor = setores[i];
+                maior = i;
             }
         }
 
-        System.out.println("A qunatidade de dias com temperaturas acima de 30° foi(foram): "+ dias + " dias");
+        System.out.println("O setor que mais consumiu água foi o setor "+ maior + ", que gastou "+ maiorValor+ " litros de água.");
     }
 }
