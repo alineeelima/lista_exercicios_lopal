@@ -1,15 +1,23 @@
 package org.example;
-import java.util.Scanner;
-
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-        int[] num = {10, 20, 30 ,40 ,50};
-        int soma = 0;
-        for (int i = 0; i < 5; i++){
-            System.out.println(num[i]);
-            soma += num[i];
+        int valores[] = {12, 45, 8, 90,23};
+        int maior = 0;
+        for (int i = 0; i < valores.length; i++){
+            System.out.println(valores[i]);
+            if (valores[i] > maior){
+                maior = valores[i];
+            }
         }
-        System.out.println("A soma dos números do vetor é igual a: "+soma);
+        System.out.println("O maior valor é: "+maior);
     }
 }
+
+
+
+
+
+
 
