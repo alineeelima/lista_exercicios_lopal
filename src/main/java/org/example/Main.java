@@ -1,11 +1,13 @@
 package org.example;
 
+import java.sql.SQLOutput;
+
 public class Main {
     static void main() {
-        imprimirMensagem();
+        somar(2,4);
     }
-    static void imprimirMensagem(){
-        System.out.println("Bem-vindo ao sistema!");;
+    static void somar(int a, int b){
+        System.out.println(a+b);
     }
 }
 
