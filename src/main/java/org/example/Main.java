@@ -1,18 +1,14 @@
 package org.example;
 public class Main {
     static void main() {
-        verificarPar(98, 74, 198);
+        calcularFatorial(3);
     }
-    static void verificarPar(double a, double b, double c){
-        double maior = 0;
-        if (a > maior){
-            maior = a;
-        }else if(b > maior){
-            maior = b;
-        }else{
-            maior = c;
+    static void calcularFatorial(int a){
+        int resultado = 1;
+        for (int i = 1; i <= a; i++) {
+            resultado *= i;
         }
-        System.out.println("O maior número é: "+maior);
+        System.out.println("O resultado de "+a+"! é: "+resultado);
     }
 }
 
