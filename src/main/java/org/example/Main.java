@@ -1,11 +1,14 @@
 package org.example;
 public class Main {
     static void main() {
-        double media = mediaNotas(9, 9,3);
-        System.out.println("A média dessas ttrês notas é igual a: "+media);
+        if (verificarPar(98) == 0){
+            System.out.println("Par");
+        }else{
+            System.out.println("Ímpar");
+        }
     }
-    static double mediaNotas(double a, double b, double c){
-        return (a+b+c)/3;
+    static double verificarPar(int a){
+        return a%2;
     }
 }
 
