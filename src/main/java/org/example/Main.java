@@ -1,11 +1,11 @@
 package org.example;
 public class Main {
     static void main() {
-        int soma = somaDoisNum(35,56);
-        System.out.println("A soma dos dois números é igual a: "+soma);
+        int dobro = dobroNum(35);
+        System.out.println("O dobro desse número é igual a: "+dobro);
     }
-    static int somaDoisNum(int a,int b){
-        return a + b;
+    static int dobroNum(int a){
+        return a * 2;
     }
 }
 
