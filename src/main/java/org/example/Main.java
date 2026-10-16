@@ -1,14 +1,11 @@
 package org.example;
 public class Main {
     static void main() {
-        calcularExpoente(2, 4);
+        calcularIMC(52, 1.59);
     }
-    static void calcularExpoente(int b, int e){
-        int resultado = 1;
-        for (int i = 1; i <= e; i++){
-            resultado *= b;
-        }
-        System.out.println("O resultado é: "+resultado);
+    static void calcularIMC(double p, double a){
+        double imc = p/(a*a);
+        System.out.println("O IMC é: "+ imc);
     }
 }
 
