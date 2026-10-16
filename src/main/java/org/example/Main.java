@@ -1,11 +1,11 @@
 package org.example;
 public class Main {
     static void main() {
-        int dobro = dobroNum(35);
-        System.out.println("O dobro desse número é igual a: "+dobro);
+        double f = converterCelsiusFahrenheit(35);
+        System.out.println("Esse número em Fahrenheit é igual a: "+f+"°F");
     }
-    static int dobroNum(int a){
-        return a * 2;
+    static double converterCelsiusFahrenheit(double c){
+        return c * 1.8 + 32;
     }
 }
 
