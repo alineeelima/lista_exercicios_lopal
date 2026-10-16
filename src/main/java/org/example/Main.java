@@ -1,11 +1,11 @@
 package org.example;
 public class Main {
     static void main() {
-        double f = converterCelsiusFahrenheit(35);
-        System.out.println("Esse número em Fahrenheit é igual a: "+f+"°F");
+        double media = mediaNotas(9, 9,3);
+        System.out.println("A média dessas ttrês notas é igual a: "+media);
     }
-    static double converterCelsiusFahrenheit(double c){
-        return c * 1.8 + 32;
+    static double mediaNotas(double a, double b, double c){
+        return (a+b+c)/3;
     }
 }
 
