@@ -16,12 +16,16 @@ public class Main {
             try(BufferedReader arquivoBuffer = new BufferedReader(new FileReader(arquivo))){
 
                 String linha;
-                int contador = -1;
+                System.out.println("Os hosts que tem o sistema operacional Linux  são: ");
                 while((linha = arquivoBuffer.readLine())!= null){
-                    String[] campos =linha.split(";");
-                    contador += 1;
+                    String[] campos = linha.split(",");
+                    String sistema = campos[2];
+                    if (sistema.equalsIgnoreCase("linux")) {
+                        String host = campos[0];
+                        System.out.println(host);
+                    }
                 }
-                System.out.println("Foram encontrados "+contador+" registros.");
+
                 arquivoBuffer.close();
 
             }catch(IOException erro){
@@ -37,15 +41,7 @@ public class Main {
         }
 
     }
-
 }
-
-
-
-
-
-
-
 
 
 
