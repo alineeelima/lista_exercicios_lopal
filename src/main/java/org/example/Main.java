@@ -16,13 +16,13 @@ public class Main {
             try(BufferedReader arquivoBuffer = new BufferedReader(new FileReader(arquivo))){
 
                 String linha;
-                System.out.println("Os hosts que tem o sistema operacional Linux  são: ");
+                System.out.println("Os IPs dos dispositivos que utilizam o sistema operacional Windows são: ");
                 while((linha = arquivoBuffer.readLine())!= null){
                     String[] campos = linha.split(",");
                     String sistema = campos[2];
-                    if (sistema.equalsIgnoreCase("linux")) {
-                        String host = campos[0];
-                        System.out.println(host);
+                    if (sistema.equalsIgnoreCase("windows")) {
+                        String ip = campos[1];
+                        System.out.println(ip);
                     }
                 }
 
@@ -42,7 +42,5 @@ public class Main {
 
     }
 }
-
-
 
 
