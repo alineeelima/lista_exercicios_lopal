@@ -4,6 +4,8 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
+        int linux = 0;
+        int windows = 0;
         try {
             BufferedReader leitor = new BufferedReader(new FileReader("C:/Users/53602007820/Downloads/ativos.csv"));
             BufferedWriter escritor = new BufferedWriter(new FileWriter("C:/Users/53602007820/Downloads/relatorio.csv"));
@@ -17,21 +19,22 @@ public class Main {
                 String so = dados[2];
                 String criticidade;
                 String status;
-
                 if (so.contains("Linux")){
                     criticidade = "Alta";
                 }else{
                     criticidade = "Baixa";
                 }
                 if (so.contains("Windows")){
-                    status = "On-Line";
+                    status = ", On-Line";
+                    windows += 1;
                 }else if (so.contains("Linux")){
-                    status = "Em monitoramento";
+                    status = ", Em monitoramento";
+                    linux += 1;
                 }else{
                     status = "";
                 }
 
-                escritor.write(host + "," + ip + "," + so + ", " + criticidade + "," + status);
+                escritor.write(host + "," + ip + "," + so + ", " + criticidade + status);
                 escritor.newLine();
             }
             leitor.close();
@@ -40,8 +43,11 @@ public class Main {
         }catch (Exception e){
             System.out.println("Erro: "+ e.getMessage());
         }
+        System.out.println("A quantidade de dispositivos que utilizam o sistema operacional Linux é: "+linux);
+        System.out.println("A quantidade de dispositivos que utilizam o sistema operacional Windows é: "+windows);
     }
 }
+
 
 
 
