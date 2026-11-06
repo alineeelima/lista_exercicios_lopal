@@ -4,43 +4,44 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
+        try {
+            BufferedReader leitor = new BufferedReader(new FileReader("C:/Users/53602007820/Downloads/ativos.csv"));
+            BufferedWriter escritor = new BufferedWriter(new FileWriter("C:/Users/53602007820/Downloads/relatorio.csv"));
+            String linha = leitor.readLine();
+            escritor.write(linha+", criticidade");
+            escritor.newLine();
+            while ((linha = leitor.readLine())!= null){
+                String[] dados = linha.split(",");
+                String host = dados[0];
+                String ip = dados[1];
+                String so = dados[2];
+                String criticidade;
+                String status;
 
-        String caminhoArquivo = "C:/Users/53602007820/Downloads/ativos.csv";
-
-        File arquivo = new File(caminhoArquivo);
-
-        if(arquivo.exists()){
-
-            System.out.println("O arquivo existe. Iniciado a leitura...");
-
-            try(BufferedReader arquivoBuffer = new BufferedReader(new FileReader(arquivo))){
-
-                String linha;
-                System.out.println("Os IPs dos dispositivos que utilizam o sistema operacional Windows são: ");
-                while((linha = arquivoBuffer.readLine())!= null){
-                    String[] campos = linha.split(",");
-                    String sistema = campos[2];
-                    if (sistema.equalsIgnoreCase("windows")) {
-                        String ip = campos[1];
-                        System.out.println(ip);
-                    }
+                if (so.contains("Linux")){
+                    criticidade = "Alta";
+                }else{
+                    criticidade = "Baixa";
+                }
+                if (so.contains("Windows")){
+                    status = "On-Line";
+                }else if (so.contains("Linux")){
+                    status = "Em monitoramento";
+                }else{
+                    status = "";
                 }
 
-                arquivoBuffer.close();
-
-            }catch(IOException erro){
-
-                System.out.println("Erro na leitura do arquivo"+erro.getMessage());
-
+                escritor.write(host + "," + ip + "," + so + ", " + criticidade + "," + status);
+                escritor.newLine();
             }
-
-        }else{
-
-            System.out.println("O arquivo não existe.");
-
+            leitor.close();
+            escritor.close();
+            System.out.println("O relatório foi gerado com sucesso!");
+        }catch (Exception e){
+            System.out.println("Erro: "+ e.getMessage());
         }
-
     }
 }
+
 
 
