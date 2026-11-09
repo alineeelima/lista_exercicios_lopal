@@ -1,9 +1,11 @@
 package org.example;
 
+import java.time.LocalDate;
 import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
+        LocalDate hoje = LocalDate.now();
         int linux = 0;
         int windows = 0;
         try {
@@ -11,8 +13,8 @@ public class Main {
             BufferedWriter escritor = new BufferedWriter(new FileWriter("C:/Users/53602007820/Downloads/relatorio.csv"));
             BufferedWriter escrever = new BufferedWriter(new FileWriter("C:/Users/53602007820/Downloads/relatorio2.csv"));
             String linha = leitor.readLine();
-            escritor.write(linha+", criticidade");
-            escrever.write(linha+", criticidade");
+            escritor.write(linha+", criticidade, Status, Risco");
+            escrever.write(linha+", criticidade, Status, Risco");
             escrever.newLine();
             escritor.newLine();
             while ((linha = leitor.readLine())!= null){
@@ -21,6 +23,7 @@ public class Main {
                 String ip = dados[1];
                 String so = dados[2];
                 String criticidade;
+                int risco;
                 String status;
                 if (so.contains("Linux")){
                     criticidade = "Alta";
@@ -34,22 +37,27 @@ public class Main {
                     status = ", Em monitoramento";
                     linux += 1;
                 }else{
-                    status = "";
+                    status = "Nao informado";
                 }
                 if (criticidade == "Alta"){
                     escrever.write(host + "," + ip + "," + so + ", " + criticidade + status);
                     escrever.newLine();
+                    risco = 10;
+                }else if (criticidade == "Baixa"){
+                    risco = 5;
+                }else{
+                    risco = 1;
                 }
-                escritor.write(host+","+ip+","+so+","+criticidade+status);
+                escritor.write(host+","+ip+","+so+","+criticidade+","+status+","+risco);
                 escritor.newLine();
             }
-            escritor.write("O relatório foi gerado no dia: 09/11/2026");
-            escrever.write("O relatório foi gerado no dia: 09/11/2026");
+            escritor.write("O relatorio foi gerado no dia: "+hoje);
+            escrever.write("O relatorio foi gerado no dia: "+hoje);
             leitor.close();
             escritor.close();
             escrever.close();
-            System.out.println("O relatório foi gerado com sucesso!");
-            System.out.println("O relatório2 foi gerado com sucesso!");
+            System.out.println("O relatorio foi gerado com sucesso!");
+            System.out.println("O relatorio2 foi gerado com sucesso!");
             escrever.newLine();
         }catch (Exception e){
             System.out.println("Erro: "+ e.getMessage());
