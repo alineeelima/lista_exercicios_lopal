@@ -43,6 +43,8 @@ public class Main {
                 escritor.write(host+","+ip+","+so+","+criticidade+status);
                 escritor.newLine();
             }
+            escritor.write("O relatório foi gerado no dia: 09/11/2026");
+            escrever.write("O relatório foi gerado no dia: 09/11/2026");
             leitor.close();
             escritor.close();
             escrever.close();
