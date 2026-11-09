@@ -9,8 +9,11 @@ public class Main {
         try {
             BufferedReader leitor = new BufferedReader(new FileReader("C:/Users/53602007820/Downloads/ativos.csv"));
             BufferedWriter escritor = new BufferedWriter(new FileWriter("C:/Users/53602007820/Downloads/relatorio.csv"));
+            BufferedWriter escrever = new BufferedWriter(new FileWriter("C:/Users/53602007820/Downloads/relatorio2.csv"));
             String linha = leitor.readLine();
             escritor.write(linha+", criticidade");
+            escrever.write(linha+", criticidade");
+            escrever.newLine();
             escritor.newLine();
             while ((linha = leitor.readLine())!= null){
                 String[] dados = linha.split(",");
@@ -33,13 +36,19 @@ public class Main {
                 }else{
                     status = "";
                 }
-
-                escritor.write(host + "," + ip + "," + so + ", " + criticidade + status);
+                if (criticidade == "Alta"){
+                    escrever.write(host + "," + ip + "," + so + ", " + criticidade + status);
+                    escrever.newLine();
+                }
+                escritor.write(host+","+ip+","+so+","+criticidade+status);
                 escritor.newLine();
             }
             leitor.close();
             escritor.close();
+            escrever.close();
             System.out.println("O relatório foi gerado com sucesso!");
+            System.out.println("O relatório2 foi gerado com sucesso!");
+            escrever.newLine();
         }catch (Exception e){
             System.out.println("Erro: "+ e.getMessage());
         }
