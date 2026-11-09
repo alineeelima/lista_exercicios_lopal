@@ -1,11 +1,11 @@
 package org.example;
 
-import java.time.LocalDate;
 import java.io.*;
-
+import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         LocalDate hoje = LocalDate.now();
+        System.out.println(hoje);
         int linux = 0;
         int windows = 0;
         try {
@@ -37,7 +37,7 @@ public class Main {
                     status = ", Em monitoramento";
                     linux += 1;
                 }else{
-                    status = "Nao informado";
+                    status = "Não informado";
                 }
                 if (criticidade == "Alta"){
                     escrever.write(host + "," + ip + "," + so + ", " + criticidade + status);
@@ -51,13 +51,13 @@ public class Main {
                 escritor.write(host+","+ip+","+so+","+criticidade+","+status+","+risco);
                 escritor.newLine();
             }
-            escritor.write("O relatorio foi gerado no dia: "+hoje);
-            escrever.write("O relatorio foi gerado no dia: "+hoje);
+            escritor.write("O relatório foi gerado no dia: "+ hoje);
+            escrever.write("O relatório foi gerado no dia: "+ hoje);
             leitor.close();
             escritor.close();
             escrever.close();
-            System.out.println("O relatorio foi gerado com sucesso!");
-            System.out.println("O relatorio2 foi gerado com sucesso!");
+            System.out.println("O relatório foi gerado com sucesso!");
+            System.out.println("O relatório2 foi gerado com sucesso!");
             escrever.newLine();
         }catch (Exception e){
             System.out.println("Erro: "+ e.getMessage());
