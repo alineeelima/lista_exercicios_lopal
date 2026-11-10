@@ -14,7 +14,7 @@ public class Main {
             BufferedWriter escrever = new BufferedWriter(new FileWriter("C:/Users/53602007820/Downloads/relatorio2.csv"));
             String linha = leitor.readLine();
             escritor.write(linha+", criticidade, Status, Risco");
-            escrever.write(linha+", criticidade, Status, Risco");
+            escrever.write(linha+", criticidade, Status, Risco, Data de modificacao");
             escrever.newLine();
             escritor.newLine();
             while ((linha = leitor.readLine())!= null){
@@ -48,11 +48,9 @@ public class Main {
                 }else{
                     risco = 1;
                 }
-                escritor.write(host+","+ip+","+so+","+criticidade+","+status+","+risco);
+                escritor.write(host+","+ip+","+so+","+criticidade+","+status+","+risco+","+hoje);
                 escritor.newLine();
             }
-            escritor.write("O relatório foi gerado no dia: "+ hoje);
-            escrever.write("O relatório foi gerado no dia: "+ hoje);
             leitor.close();
             escritor.close();
             escrever.close();
